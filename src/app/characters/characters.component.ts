@@ -1,6 +1,6 @@
 import { CharacterApiService } from './character/shared/character-api.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 
 @Component({
@@ -8,16 +8,17 @@ import { Observable } from 'rxjs';
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css']
 })
+
 export class CharactersComponent implements OnInit {
   title = 'FieldMarvel'
+  characters: any[100]
 
-  constructor(private character: CharacterApiService) { }
-  allCharacters!: Observable<any>;
+  constructor(private character: CharacterApiService) {}
+
   ngOnInit() {
-    this.getCharacters();
-  }
-
-  getCharacters() {
-    this.allCharacters = this.character.getAllCharacters();
+    this.character.getAllCharacters().subscribe(
+      characters => this.characters = characters
+    );
+    console.log(this.characters)
   }
 }

@@ -5,14 +5,16 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css']
 })
+
 export class CharacterComponent implements OnInit {
-
-  @Input()
-    character : any;
-
+  @Input() character: any = {};
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+  interface Character {
+    name: string
+    thumbnail: string
+  }
 }

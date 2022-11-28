@@ -11,23 +11,21 @@ import { CharacterApiService } from '../characters/character/shared/character-ap
 export class SearchbarComponent {
   @Input()
   search: any;
-  allCharacters : Observable<any>
-
+  allCharacters : Observable<any> = {} as Observable<any>
 
   constructor(private character: CharacterApiService) { }
       
-      ngOnInit() {
-          this.getCharacters()
-      }
+  ngOnInit() {
+    this.getCharacters()
+  }
 
   getCharacters() {
     this.allCharacters = this.character.getAllCharacters();
   }
-  handleSearch () {
-     
-    }
-    allSearch(){
-    } 
- 
 
+  handleSearch() {
+  }
+
+  allSearch() {
+  } 
 }
