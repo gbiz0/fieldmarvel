@@ -3,7 +3,7 @@
     <img id="img" alt="MarvelImage" src="../assets/img/marvel.png">
 
     <form>
-        <input type="text" name="search" id="search" placeholder="Pesquise seu personagem">
+        <input type="text" placeholder="Pesquise seu personagem" (input)="search($event)">
         <button disabled><i class="bi bi-search"></i></button>
     </form>
 </header>

@@ -1,6 +1,9 @@
 import { Observable } from 'rxjs';
 import { Component, Input } from '@angular/core';
+import { map, filter, scan } from 'rxjs/operators';
 import { CharacterApiService } from '../characters/character/shared/character-api.service';
+import { CharactersComponent } from '../characters/characters.component';
+
 
 
 @Component({
@@ -8,11 +11,12 @@ import { CharacterApiService } from '../characters/character/shared/character-ap
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.css']
 })
+
 export class SearchbarComponent {
   @Input()
-  search: any;
+  searchTerm : string = ''
   allCharacters : Observable<any> = {} as Observable<any>
-
+  
   constructor(private character: CharacterApiService) { }
       
   ngOnInit() {
@@ -23,9 +27,12 @@ export class SearchbarComponent {
     this.allCharacters = this.character.getAllCharacters();
   }
 
-  handleSearch() {
+  search(e : Event): void {
+    const target = e.target as HTMLInputElement
+    const value = target.value
+
+    this.character = this.allCharacters.filter((characters) => characters.name.tolLowerCase().includes(value))
+
   }
 
-  allSearch() {
-  } 
 }
