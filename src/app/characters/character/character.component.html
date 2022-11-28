@@ -1,8 +1,8 @@
-<div class="row">
-  <div class="card character">
-    <img src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="{{character.name}}">
-    <h2>{{character.name}}</h2>
-    <p>{{character.description}}</p>
-    <a href="{{character.urls[0].url}}" target="_blank"  color="primary">Detalhes</a>
+<div class="card">
+  <img src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="{{character.name}}">
+  <div class="conteiner">
+    <h2 class="title">{{character.name}}</h2><br>
+    <p class="description">{{character.description}}</p>
+    <a href="{{character.urls[0].url}}" class="btn">Detalhes</a>
   </div>
 </div>

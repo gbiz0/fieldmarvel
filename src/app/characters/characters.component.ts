@@ -1,6 +1,7 @@
 import { CharacterApiService } from './character/shared/character-api.service';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Character } from './character/character.component'
+
 
 
 @Component({

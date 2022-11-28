@@ -13,8 +13,8 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit() {
   }
-  interface Character {
-    name: string
-    thumbnail: string
-  }
+}
+export interface Character {
+  name: string
+  thumbnail: string
 }
