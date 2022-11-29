@@ -14,25 +14,23 @@ import { CharactersComponent } from '../characters/characters.component';
 
 export class SearchbarComponent {
   @Input()
-  searchTerm : string = ''
-  allCharacters : Observable<any> = {} as Observable<any>
+  search: any
   
   constructor(private character: CharacterApiService) { }
+      allCharacters: Observable<any> = {} as Observable<any>
       
-  ngOnInit() {
-    this.getCharacters()
-  }
+      ngOnInit() {
+          this.getCharacters();
+      }
 
   getCharacters() {
     this.allCharacters = this.character.getAllCharacters();
   }
-
-  search(e : Event): void {
-    const target = e.target as HTMLInputElement
-    const value = target.value
-
-    this.character = this.allCharacters.filter((characters) => characters.name.tolLowerCase().includes(value))
-
-  }
+  handleSearch () {
+     
+    }
+    allSearch(){
+    }
+ 
 
 }
