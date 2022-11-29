@@ -8,7 +8,7 @@
 -RXJS (Biblioteca)<br>
 
 ## Desenvolvimento
-Durante o processo de produção do projeto, foi utilizado principios básicos de organização de tarefas juntamente com a metodologia Scrum, o que torna o projeto mais organizado e profissional. Foram usados tambem a separação de requisitos funcionais e não funcionais do sistema, para assim evitar lacunas.
+Durante o processo de produção do projeto, foi utilizado principios básicos de organização de tarefas juntamente com a metodologia Scrum, o que torna o projeto mais organizado e profissional. Foram usados princípios de semantica e tambem a separação de requisitos funcionais e não funcionais do sistema, para assim evitar lacunas.
 
 ## Dificuldades e o que pode ser melhorado
 Sem dúvidas o principal desafio foi a adaptação a framework recomendada, em que o primeiro contato foi durante o desenvolvimento do sistema proposto. Então, a principal maneira de aprender foi lendo as documentações da tecnologia e aplicar a mesma no trabalho.
