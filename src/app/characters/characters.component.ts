@@ -1,8 +1,6 @@
 import { CharacterApiService } from './character/shared/character-api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Character } from './character/character.component'
-
-
 
 @Component({
   selector: 'app-characters',
@@ -12,14 +10,24 @@ import { Character } from './character/character.component'
 
 export class CharactersComponent implements OnInit {
   title = 'FieldMarvel'
-  characters: any[100]
+  allCharacters: any[] = []
+  @Input() query: string = ''
+  @Output() charactersEvent = new EventEmitter<any[]>()
+  @Input() characters: any[] = []
 
-  constructor(private character: CharacterApiService) {}
+  constructor(private characterService: CharacterApiService) {}
 
   ngOnInit() {
-    this.character.getAllCharacters().subscribe(
-      characters => this.characters = characters
-    );
-    console.log(this.characters)
+    this.characterService.getAllCharacters().subscribe(
+      characters => characters.forEach((char: any)=> {
+        this.allCharacters.push(char)
+      })
+    )
+
+    this.setCharacters(this.allCharacters)
+  }
+
+  setCharacters(characters: any[]) {
+    this.charactersEvent.emit(characters)
   }
 }

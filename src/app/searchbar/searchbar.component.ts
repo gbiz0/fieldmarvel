@@ -1,36 +1,17 @@
-import { Observable } from 'rxjs';
-import { Component, Input } from '@angular/core';
-import { map, filter, scan } from 'rxjs/operators';
-import { CharacterApiService } from '../characters/character/shared/character-api.service';
-import { CharactersComponent } from '../characters/characters.component';
-
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.css']
+  styleUrls: ['./searchbar.component.css'],
 })
 
 export class SearchbarComponent {
-  @Input()
-  search: any
-  
-  constructor(private character: CharacterApiService) { }
-      allCharacters: Observable<any> = {} as Observable<any>
-      
-      ngOnInit() {
-          this.getCharacters();
-      }
+  @Output() queryEvent = new EventEmitter<string>();
 
-  getCharacters() {
-    this.allCharacters = this.character.getAllCharacters();
+  constructor() {}
+
+  search(query: string) {
+    this.queryEvent.emit(query)
   }
-  handleSearch () {
-     
-    }
-    allSearch(){
-    }
- 
-
 }
