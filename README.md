@@ -6,7 +6,7 @@
 -Figma <br>
 -Git/GitHub (Versionamento de código)<br>
 -RXJS (Biblioteca)<br>
-
+ om/gbiz0/fieldmarvel/edit/main
 ## Desenvolvimento
 Durante o processo de produção do projeto, foi utilizado principios básicos de organização de tarefas juntamente com a metodologia Scrum, o que torna o projeto mais organizado e profissional. Foram usados princípios de semantica e tambem a separação de requisitos funcionais e não funcionais do sistema, para assim evitar lacunas.
 
@@ -20,3 +20,6 @@ Meu nome é Gustavo, tenho 17 anos e sou natural de Votuporanga-SP, porém, me m
 ## Contato
 Celular/WhatsApp: (17) 99764-8231<br>
 E-mail: gustavo.bizo@protonmail.com
+
+##Link do repositório
+<a href="https://github.com/gbiz0/fieldmarvel">Aqui!</a>
